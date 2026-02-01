@@ -4,10 +4,12 @@ import { marketData } from "@/data/market-data";
 import type { FC } from "react";
 
 export const TickerMarquee: FC = () => {
+  const items = [...marketData, ...marketData];
+
   return (
     <div className="w-full overflow-hidden border-b border-zinc-800 bg-[#0A0A0A]">
-      <div className="flex animate-[marquee_30s_linear_infinite] gap-8 px-4 py-2 text-[11px] font-mono">
-        {[...marketData, ...marketData].map((item, index) => {
+      <div className="flex min-w-max animate-[marquee_30s_linear_infinite] gap-8 px-4 py-2 text-[11px] font-mono">
+        {items.map((item, index) => {
           const isPositive = item.change_percent >= 0;
           const sign = isPositive ? "▲" : "▼";
           const colorClass = isPositive ? "text-green-400" : "text-red-400";

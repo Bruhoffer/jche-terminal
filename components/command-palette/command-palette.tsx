@@ -42,7 +42,7 @@ const COMMANDS: CommandItemConfig[] = [
   },
   {
     id: "cv",
-    label: "Execute Trade (Email $JCHE)",
+    label: "Execute Trade (Email Justin)",
     hint: "Contact Justin via email",
     action: () => {
       window.location.href =

@@ -92,7 +92,7 @@ export const OverviewView: FC = () => {
         <section className="rounded-md border border-zinc-800 bg-zinc-950 p-4">
           <div className="mb-2 flex items-center justify-between text-xs font-mono text-zinc-500">
             <span>Active Positions</span>
-            <span className="text-green-400">HLD</span>
+            <span className="text-blue-400">HLD</span>
           </div>
           <div className="space-y-2 text-xs">
             {activePositions.map((t) => (

@@ -1,4 +1,4 @@
-export type TradeType = "BUY" | "LST" | "HLD";
+export type TradeType = "BUY" | "CLOSED" | "HLD";
 
 export interface Asset {
   id: string;

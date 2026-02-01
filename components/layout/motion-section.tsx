@@ -15,8 +15,8 @@ export const MotionSection: FC<MotionSectionProps> = ({
   return (
     <motion.section
       className={className}
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.25, ease: "easeOut" }}
     >
       {children}

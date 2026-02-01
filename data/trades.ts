@@ -1,6 +1,6 @@
 import type { Trade } from "@/types/domain";
 
-// Experience ledger entries (BUY/HLD/LST as transaction types).
+// Experience ledger entries (BUY/HLD/CLOSED as transaction types).
 export const trades: Trade[] = [
   {
     id: "trade-algebris",
@@ -49,7 +49,7 @@ export const trades: Trade[] = [
   },
   {
     id: "trade-monee",
-    type: "LST",
+    type: "CLOSED",
     asset_name: "Monee",
     role: "Data Engineering Intern",
     duration: "Aug 2025 – Nov 2025",
@@ -72,7 +72,7 @@ export const trades: Trade[] = [
   },
     {
     id: "trade-nus-ta",
-    type: "LST",
+    type: "CLOSED",
     asset_name: "National University of Singapore (NUS)",
     role: "Teaching Assistant",
     duration: "Aug 2025 – Dec 2025",
@@ -91,7 +91,7 @@ export const trades: Trade[] = [
   },
   {
     id: "trade-finexis",
-    type: "LST",
+    type: "CLOSED",
     asset_name: "Finexis",
     role: "Technology Intern",
     duration: "May 2025 – Aug 2025",
@@ -117,7 +117,7 @@ export const trades: Trade[] = [
   },
   {
     id: "trade-ey",
-    type: "LST",
+    type: "CLOSED",
     asset_name: "EY",
     role: "Consulting Intern",
     duration: "May 2024 – Aug 2024",
