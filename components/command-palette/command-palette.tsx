@@ -66,6 +66,21 @@ export const CommandPalette: FC = () => {
     );
   }, [query]);
 
+  // Close palette on global Escape key while open, regardless of focus
+  useEffect(() => {
+    if (!open) return;
+
+    const handler = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [open]);
+
   useEffect(() => {
     // Reset selection when query changes
     setSelectedIndex(0);

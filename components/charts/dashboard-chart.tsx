@@ -10,9 +10,29 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { buildCareerPerformanceSeries } from "@/lib/chart-data";
+import type { TooltipProps } from "recharts";
+import {
+  buildCareerPerformanceSeries,
+  type ChartPoint,
+} from "@/lib/chart-data";
 
-const data = buildCareerPerformanceSeries();
+const data: ChartPoint[] = buildCareerPerformanceSeries();
+
+const renderTooltip = ({ active, payload }: TooltipProps<number, string>) => {
+  if (!active || !payload || payload.length === 0) return null;
+
+  const point = payload[0].payload as ChartPoint;
+
+  return (
+    <div className="rounded-md border border-zinc-700 bg-zinc-950 px-3 py-2 text-xs font-mono">
+      <div className="text-[10px] uppercase tracking-wide text-zinc-500">
+        {point.label}
+      </div>
+      <div className="text-zinc-100">$JCHE · {point.value.toFixed(0)}</div>
+      <div className="mt-1 text-[11px] text-zinc-400">{point.note}</div>
+    </div>
+  );
+};
 
 export const DashboardChart: FC = () => {
   return (
@@ -51,16 +71,7 @@ export const DashboardChart: FC = () => {
             width={30}
             domain={[0, 100]}
           />
-          <Tooltip
-            contentStyle={{
-              backgroundColor: "#020617",
-              border: "1px solid #27272a",
-              borderRadius: 6,
-              padding: "6px 8px",
-            }}
-            labelStyle={{ color: "#e4e4e7", fontSize: 11 }}
-            itemStyle={{ color: "#22c55e", fontSize: 11 }}
-          />
+          <Tooltip content={renderTooltip} />
           <Area
             type="monotone"
             dataKey="value"
