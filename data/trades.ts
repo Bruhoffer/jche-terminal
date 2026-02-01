@@ -18,6 +18,14 @@ export const trades: Trade[] = [
       "Designed distributed ETL pipelines on Databricks using the Medallion Architecture (Delta Lake) for ACID-compliant, high-availability macro-economic data ingestion",
       "Hardened data delivery with automated unit tests and validation gates, reducing production deployment failures by ~40% through rigorous pre-merge verification",
     ],
+    tags: [
+      "Azure DevOps",
+      "RAG",
+      "Python Dash",
+      "Python Flask",
+      "Databricks",
+      "ETL",
+    ],
   },
   {
     id: "trade-nus-fund",
@@ -32,6 +40,11 @@ export const trades: Trade[] = [
     highlights: [
       "Design and backtest systematic and factor-based equity strategies for the student-managed portfolio",
       "Help maintain research and data infrastructure for screening, backtesting and performance attribution",
+    ],
+    tags: [
+      "Systematic strategies",
+      "Backtesting",
+      "Dashboarding"
     ],
   },
   {
@@ -49,6 +62,13 @@ export const trades: Trade[] = [
       "Improved end-to-end data latency by 60% on critical monitoring views",
       "Automated maker–checker reconciliation in Airflow, improving availability by 30% and eliminating 95% of reporting errors",
     ],
+    tags: [
+      "Spark Structured Streaming",
+      "PySpark",
+      "SparkSQL",
+      "Airflow",
+      "ETL pipelines",
+    ],
   },
     {
     id: "trade-nus-ta",
@@ -63,6 +83,10 @@ export const trades: Trade[] = [
     highlights: [
       "Achieved an overall effectiveness rating of 4.7/5.0, surpassing the School of Computing faculty average (4.3) by ~9%",
       "Improved soft outcomes with a 4.6/5.0 score for enhancing students' industry readiness and team effectiveness",
+    ],
+    tags: [
+      "Teaching",
+      "Communication",
     ],
   },
   {
@@ -80,6 +104,16 @@ export const trades: Trade[] = [
       "Cut manual processing time by 85%, enabling same-day data synthesis for the advisory team",
       "Delivered Tableau dashboards for churn risk and next-purchase prediction to C-suite stakeholders",
     ],
+    tags: [
+      "Python",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Speech-to-text",
+      "OpenAI",
+      "Tableau",
+      "Churn modelling",
+    ],
   },
   {
     id: "trade-ey",
@@ -94,6 +128,11 @@ export const trades: Trade[] = [
     highlights: [
       "Performed statistical analyses in R to support technology and transformation initiatives for financial services clients",
       "Translated quantitative findings into recommendations for process optimisation and risk management",
+    ],
+    tags: [
+      "R",
+      "Statistical analysis",
+      "Consulting",
     ],
   },
 ];

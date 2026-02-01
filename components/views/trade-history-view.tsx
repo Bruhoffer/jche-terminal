@@ -39,7 +39,7 @@ const columns: ColumnDef<Trade>[] = [
     key: "asset_name",
     header: "Asset / Role",
     cell: (value, row) => (
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-1">
         <span className="text-zinc-100">{value as string}</span>
         <span className="text-[11px] text-zinc-500">{row.role}</span>
       </div>
@@ -66,6 +66,18 @@ const columns: ColumnDef<Trade>[] = [
               <li key={index}>{item}</li>
             ))}
           </ul>
+          {trade.tags && trade.tags.length > 0 && (
+            <div className="mt-1.5 flex flex-wrap gap-1">
+              {trade.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full bg-zinc-900 px-1.5 py-0.5 text-[10px] text-zinc-400"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
       );
     },
@@ -141,6 +153,18 @@ export const TradeHistoryView: FC = () => {
                   <li key={index}>{item}</li>
                 ))}
               </ul>
+              {trade.tags && trade.tags.length > 0 && (
+                <div className="mt-1.5 flex flex-wrap gap-1">
+                  {trade.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full bg-zinc-900 px-1.5 py-0.5 text-[10px] text-zinc-400"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
             </article>
           );
         })}

@@ -13,6 +13,8 @@ interface CommandItemConfig {
   action?: () => void;
 }
 
+const HAS_SEEN_COMMAND_PALETTE_KEY = "jche_has_seen_command_palette";
+
 const COMMANDS: CommandItemConfig[] = [
   {
     id: "overview",
@@ -61,6 +63,22 @@ export const CommandPalette: FC = () => {
       setOpen(true);
     },
   });
+
+  // On first visit, auto-open the palette once as onboarding.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    // Only auto-open on larger viewports (desktop/laptop). On mobile,
+    // the drawer navigation is the primary entry point.
+    const isDesktop = window.innerWidth >= 768; // Tailwind md breakpoint
+    if (!isDesktop) return;
+
+    const hasSeen = window.localStorage.getItem(HAS_SEEN_COMMAND_PALETTE_KEY);
+    if (!hasSeen) {
+      setOpen(true);
+      window.localStorage.setItem(HAS_SEEN_COMMAND_PALETTE_KEY, "true");
+    }
+  }, []);
 
   const filtered = useMemo(() => {
     const q = query.toLowerCase().trim();
@@ -112,9 +130,14 @@ export const CommandPalette: FC = () => {
       }}
     >
       <div className="w-full max-w-lg overflow-hidden rounded-lg border border-zinc-800 bg-zinc-950 shadow-xl">
-        <div className="border-b border-zinc-800 px-3 py-2 text-[11px] font-mono uppercase tracking-wide text-zinc-500">
+        <div className="border-b border-zinc-800 px-3 py-2 text-[11px] font-mono tracking-wide text-zinc-500">
           <div className="flex items-center justify-between">
-            <span>Command Palette</span>
+            <div className="flex flex-col">
+              <span className="uppercase">Command Palette</span>
+              <span className="text-[10px] normal-case text-zinc-600">
+                Open anytime with Cmd+K (macOS) / Ctrl+K (Windows/Linux)
+              </span>
+            </div>
             <button
               type="button"
               onClick={() => setOpen(false)}

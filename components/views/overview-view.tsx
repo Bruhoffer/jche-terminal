@@ -12,11 +12,9 @@ export const OverviewView: FC = () => {
   return (
     <MotionSection className="flex h-full flex-col gap-4 bg-[#0A0A0A] p-4 text-zinc-100">
       <header className="flex flex-col gap-1">
-        <h1 className="text-lg font-semibold tracking-tight">$JCHE Overview</h1>
-        <p className="text-sm text-zinc-400">
-          Cumulative Impact Index of Justin Cheong, with latest disclosures and
-          active positions.
-        </p>
+        <h1 className="text-lg font-semibold tracking-tight">
+          Justin Cheong · $JCHE Overview
+        </h1>
       </header>
 
       <div className="grid gap-4 md:grid-cols-[minmax(0,2fr)_minmax(0,1.25fr)]">
@@ -25,12 +23,19 @@ export const OverviewView: FC = () => {
         <aside className="flex flex-col justify-between gap-4 rounded-md border border-zinc-800 bg-zinc-950 p-4 text-sm">
           <div className="space-y-1">
             <div className="text-xs font-mono uppercase tracking-wide text-zinc-500">
-              Trade Thesis · Long
+              Trade Thesis · Long $JCHE
             </div>
-            <div className="text-base font-semibold">Justin Cheong ($JCHE)</div>
-            <p className="text-xs text-zinc-400">
-              High-conviction data and engineering profile focused on building
-              data infrastructure for financial research.
+            <div className="text-base font-semibold">
+              Software &amp; Data Engineer
+            </div>
+            <p className="space-y-1 text-xs text-zinc-400">
+              <span className="block">
+                Full-stack engineer and analyst focused on building the
+                technical infrastructure required for systematic research. My
+                experience ranges from architecting RAG-based search engines and
+                data pipelines to developing regime-adaptive backtesting
+                frameworks for equity strategies.
+              </span>
             </p>
           </div>
           {/* Parent Container */}
@@ -117,26 +122,25 @@ export const OverviewView: FC = () => {
           <div className="grid gap-2 text-[11px] font-mono text-zinc-400 sm:grid-cols-2">
             <div className="space-y-1">
               <div className="text-[10px] uppercase text-zinc-500">
-                Version Control
+                Languages
               </div>
-              <div>Git, GitHub</div>
+              <div>Java, Python, SQL, R, JavaScript / TypeScript</div>
             </div>
             <div className="space-y-1">
               <div className="text-[10px] uppercase text-zinc-500">
-                Delivery
+                Data &amp; Pipelines
               </div>
-              <div>Azure DevOps CI/CD for data and application services</div>
+              <div>PySpark, SparkSQL, Data Warehousing, Big Data Analytics</div>
             </div>
             <div className="space-y-1">
               <div className="text-[10px] uppercase text-zinc-500">Testing</div>
               <div>pytest-style unit tests and data-validation gates</div>
             </div>
             <div className="space-y-1">
-              <div className="text-[10px] uppercase text-zinc-500">Infra</div>
-              <div>
-                Docker, Databricks, Airflow for reproducible, orchestrated
-                pipelines
+              <div className="text-[10px] uppercase text-zinc-500">
+                Infra &amp; Orchestration
               </div>
+              <div>Databricks, Airflow, Docker, Azure DevOps (CI/CD)</div>
             </div>
           </div>
         </section>

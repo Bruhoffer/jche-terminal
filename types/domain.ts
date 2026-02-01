@@ -26,6 +26,8 @@ export interface Trade {
   description: string;
   /** Optional structured bullet points for cleaner display */
   highlights?: string[];
+  /** Optional technical / domain tags for quick stack scanning */
+  tags?: string[];
 }
 
 export interface Disclosure {

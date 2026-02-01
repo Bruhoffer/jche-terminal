@@ -16,10 +16,7 @@ export const AssetPipelineView: FC = () => {
         <h1 className="text-lg font-semibold tracking-tight">
           $PRJ Asset Pipeline
         </h1>
-        <p className="text-sm text-zinc-400">
-          Portfolio of project assets in the Justin Cheong Exchange, with status
-          and indicative yield.
-        </p>
+        <p className="text-sm text-zinc-400">Portfolio of project assets</p>
       </header>
 
       <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
