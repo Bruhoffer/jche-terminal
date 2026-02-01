@@ -31,8 +31,8 @@ export const buildCareerPerformanceSeries = (): ChartPoint[] => {
     },
     {
       label: "Jan '26",
-      value: 73,
-      note: " Algebris Investments – Software Engineer Intern |                 NUS Student Investment Fund – Analyst",
+      value: 76,
+      note: " Algebris Investments – Software Engineer Intern | NUS Student Investment Fund – Analyst",
     },
   ];
 };

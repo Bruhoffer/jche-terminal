@@ -45,9 +45,6 @@ export const AssetPipelineView: FC = () => {
                   >
                     {asset.status}
                   </span>
-                  <span className="text-[11px] text-green-400">
-                    Yield {formatPercent(asset.yield)}
-                  </span>
                 </div>
               </div>
               <p className="mb-3 text-[11px] leading-relaxed text-zinc-400">
