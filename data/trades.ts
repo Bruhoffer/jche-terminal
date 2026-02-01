@@ -7,15 +7,16 @@ export const trades: Trade[] = [
     type: "HLD",
     asset_name: "Algebris Investments",
     role: "Software Engineer Intern",
-    duration: "May 2024 – Present",
+    duration: "Jan 2026 – Present",
     impact_metric:
-      "30% reduction in P95 retrieval latency and 25% lift in NDCG@10 on RAG-based search engine",
+      "Building RAG-based search engine for internal usage and data pipelines for financial research",
     description:
-      "Architecting high-availability Azure AI Search RAG pipelines with Cross-Encoder reranking, hybrid lexical/semantic retrieval and Databricks ETL, plus tests and validation gates that cut deployment failures by ~40%.",
+      "Architected high-availability RAG-based search and data infrastructure for internal financial research workflows.",
     highlights: [
-      "Architected RAG-based search engine on Azure AI Search with Cross-Encoder reranking and hybrid lexical/semantic retrieval",
-      "Reduced P95 retrieval latency by 30% while improving NDCG@10 relevance scores by 25%",
-      "Hardened data delivery with unit tests and validation gates, cutting deployment failures by ~40%",
+      "Architected a high-availability RAG-based search engine using Azure AI Search with a Cross-Encoder reranker, reducing P95 retrieval latency by 30%",
+      "Engineered a hybrid retrieval pipeline with lexical and semantic fusion plus Boolean filters for exact-match constraints, increasing search relevance (NDCG@10) by 25%",
+      "Designed distributed ETL pipelines on Databricks using the Medallion Architecture (Delta Lake) for ACID-compliant, high-availability macro-economic data ingestion",
+      "Hardened data delivery with automated unit tests and validation gates, reducing production deployment failures by ~40% through rigorous pre-merge verification",
     ],
   },
   {
@@ -47,6 +48,21 @@ export const trades: Trade[] = [
       "Engineered Spark Structured Streaming pipelines to normalise multi-source datasets for real-time risk dashboards",
       "Improved end-to-end data latency by 60% on critical monitoring views",
       "Automated maker–checker reconciliation in Airflow, improving availability by 30% and eliminating 95% of reporting errors",
+    ],
+  },
+    {
+    id: "trade-nus-ta",
+    type: "LST",
+    asset_name: "National University of Singapore (NUS)",
+    role: "Teaching Assistant",
+    duration: "Aug 2025 – Dec 2025",
+    impact_metric:
+      "Achieved 4.7/5.0 overall TA effectiveness, ~9% above School of Computing faculty average",
+    description:
+      "Teaching Assistant supporting instruction and student learning for School of Computing modules.",
+    highlights: [
+      "Achieved an overall effectiveness rating of 4.7/5.0, surpassing the School of Computing faculty average (4.3) by ~9%",
+      "Improved soft outcomes with a 4.6/5.0 score for enhancing students' industry readiness and team effectiveness",
     ],
   },
   {

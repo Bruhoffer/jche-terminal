@@ -50,10 +50,6 @@ const columns: ColumnDef<Trade>[] = [
     header: "Duration",
   },
   {
-    key: "impact_metric",
-    header: "Impact",
-  },
-  {
     key: "description",
     header: "Description",
     cell: (value, row) => {
@@ -64,11 +60,13 @@ const columns: ColumnDef<Trade>[] = [
           : [value as string];
 
       return (
-        <ul className="list-disc space-y-0.5 pl-4 text-[11px] text-zinc-400">
-          {bullets.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
+        <div className="max-w-[90%]">
+          <ul className="list-disc space-y-0.5 pl-4 text-[11px] text-zinc-400">
+            {bullets.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </div>
       );
     },
   },
@@ -87,12 +85,66 @@ export const TradeHistoryView: FC = () => {
         </p>
       </header>
 
-      <DataTable
-        columns={columns}
-        data={trades}
-        getRowKey={(row) => row.id}
-        emptyState="No trades recorded yet."
-      />
+      {/* Desktop / larger screens: dense table view */}
+      <div className="hidden md:block">
+        <DataTable
+          columns={columns}
+          data={trades}
+          getRowKey={(row) => row.id}
+          emptyState="No trades recorded yet."
+        />
+      </div>
+
+      {/* Mobile / small screens: stacked card view for readability */}
+      <div className="space-y-3 md:hidden">
+        {trades.map((trade) => {
+          const isBuy = trade.type === "BUY";
+          const isHold = trade.type === "HLD";
+
+          const color = isBuy
+            ? "text-green-400 border-green-500/40"
+            : isHold
+              ? "text-blue-400 border-blue-500/40"
+              : "text-red-400 border-red-500/40";
+
+          const Icon = isBuy ? ArrowUpRight : isHold ? Circle : ArrowDownRight;
+
+          const bullets =
+            trade.highlights && trade.highlights.length > 0
+              ? trade.highlights
+              : [trade.description];
+
+          return (
+            <article
+              key={trade.id}
+              className="rounded-md border border-zinc-800 bg-zinc-950 p-3 text-xs"
+            >
+              <div className="mb-1 flex items-center justify-between gap-2">
+                <div className="flex flex-col">
+                  <span className="text-zinc-100">{trade.asset_name}</span>
+                  <span className="text-[11px] text-zinc-500">
+                    {trade.role}
+                  </span>
+                </div>
+                <span
+                  className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[10px] font-mono uppercase tracking-wide ${color}`}
+                >
+                  <Icon className="h-3 w-3" />
+                  {trade.type}
+                </span>
+              </div>
+              <div className="mb-1 text-[11px] text-zinc-500">
+                {trade.duration}
+              </div>
+              <ul className="list-disc space-y-0.5 pl-4 text-[11px] text-zinc-400">
+                {bullets.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </article>
+          );
+        })}
+      </div>
     </MotionSection>
   );
 };

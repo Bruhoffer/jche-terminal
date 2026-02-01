@@ -5,4 +5,8 @@ export interface ColumnDef<TData> {
   header: string;
   /** Optional custom cell renderer for richer content */
   cell?: (value: TData[keyof TData], row: TData) => ReactNode;
+  /** Optional Tailwind classes applied to all cells in this column */
+  className?: string;
+  /** Optional Tailwind classes applied to the header cell for this column */
+  headerClassName?: string;
 }

@@ -47,14 +47,12 @@ export const OverviewView: FC = () => {
             </div>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-[10px] font-mono uppercase tracking-wide text-zinc-500">
-              Execute Trade
-            </span>
+            <span className="text-[10px] font-mono uppercase tracking-wide text-zinc-500"></span>
             <a
-              href="/cv.pdf"
+              href="mailto:justin.cheong@u.nus.edu?subject=Execute%20Trade%20on%20%24JCHE"
               className="inline-flex items-center rounded-full bg-green-500 px-4 py-1.5 text-xs font-mono font-medium text-black shadow-sm transition hover:bg-green-400"
             >
-              Buy Prospectus (CV)
+              Execute Trade | Email Justin
             </a>
           </div>
         </aside>
@@ -64,7 +62,6 @@ export const OverviewView: FC = () => {
         <section className="rounded-md border border-zinc-800 bg-zinc-950 p-4">
           <div className="mb-2 flex items-center justify-between text-xs font-mono text-zinc-500">
             <span>Recent Disclosures</span>
-            <span className="text-zinc-600">Latest 3</span>
           </div>
           <div className="space-y-2 text-xs">
             {recentDisclosures.map((d) => (
@@ -94,9 +91,10 @@ export const OverviewView: FC = () => {
           </div>
           <div className="space-y-2 text-xs">
             {activePositions.map((t) => (
-              <div
+              <Link
                 key={t.id}
-                className="flex items-start justify-between gap-3 border-t border-zinc-800/60 pt-2 first:border-t-0 first:pt-0"
+                href="/trade-history"
+                className="flex items-start justify-between gap-3 border-t border-zinc-800/60 pt-2 text-left first:border-t-0 first:pt-0 hover:bg-zinc-900/60"
               >
                 <div className="flex-1">
                   <div className="font-medium text-zinc-100">
@@ -104,19 +102,10 @@ export const OverviewView: FC = () => {
                   </div>
                   <div className="text-[11px] text-zinc-500">{t.duration}</div>
                   <div className="text-[11px] text-zinc-400">
-                    <ul className="list-disc space-y-0.5 pl-4">
-                      <li>{t.impact_metric}</li>
-                      {Array.isArray(t.highlights) &&
-                        t.highlights
-                          .slice(0, 2)
-                          .map((item) => <li key={item}>{item}</li>)}
-                    </ul>
+                    {t.impact_metric}
                   </div>
                 </div>
-                <span className="mt-1 inline-flex items-center rounded-full border border-green-500/50 px-2 py-0.5 text-[10px] font-mono uppercase tracking-wide text-green-400">
-                  Open
-                </span>
-              </div>
+              </Link>
             ))}
           </div>
         </section>
@@ -124,7 +113,6 @@ export const OverviewView: FC = () => {
         <section className="rounded-md border border-zinc-800 bg-zinc-950 p-4">
           <div className="mb-2 flex items-center justify-between text-xs font-mono text-zinc-500">
             <span>Risk Management</span>
-            <span className="text-zinc-600">Operational Discipline</span>
           </div>
           <div className="grid gap-2 text-[11px] font-mono text-zinc-400 sm:grid-cols-2">
             <div className="space-y-1">

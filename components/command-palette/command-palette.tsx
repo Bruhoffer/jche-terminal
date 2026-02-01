@@ -40,10 +40,11 @@ const COMMANDS: CommandItemConfig[] = [
   },
   {
     id: "cv",
-    label: "Buy Prospectus (CV)",
-    hint: "Open CV as prospectus",
+    label: "Execute Trade (Email $JCHE)",
+    hint: "Contact Justin via email",
     action: () => {
-      window.open("/cv.pdf", "_blank");
+      window.location.href =
+        "mailto:justin.cheong@u.nus.edu?subject=Execute%20Trade%20on%20%24JCHE";
     },
   },
 ];

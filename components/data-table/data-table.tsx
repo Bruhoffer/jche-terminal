@@ -29,11 +29,19 @@ export const DataTable = <TData extends object>({
       <table className="min-w-full border-collapse bg-[#0A0A0A] text-xs font-mono text-zinc-200">
         <thead className="bg-zinc-950/60 text-[10px] uppercase tracking-wide text-zinc-500">
           <tr>
-            {columns.map((column) => (
-              <th key={String(column.key)} className="px-3 py-2 text-left">
-                {column.header}
-              </th>
-            ))}
+            {columns.map((column) => {
+              const isDescriptionColumn = String(column.key) === "description";
+              return (
+                <th
+                  key={String(column.key)}
+                  className={`px-3 py-2 text-left ${
+                    isDescriptionColumn ? "w-[60%]" : ""
+                  }`}
+                >
+                  {column.header}
+                </th>
+              );
+            })}
           </tr>
         </thead>
         <tbody>
@@ -44,10 +52,14 @@ export const DataTable = <TData extends object>({
             >
               {columns.map((column) => {
                 const value = row[column.key];
+                const isDescriptionColumn =
+                  String(column.key) === "description";
                 return (
                   <td
                     key={String(column.key)}
-                    className="px-3 py-1.5 align-top"
+                    className={`px-3 py-1.5 align-top ${
+                      isDescriptionColumn ? "w-[60%]" : ""
+                    }`}
                   >
                     {column.cell ? column.cell(value, row) : String(value)}
                   </td>

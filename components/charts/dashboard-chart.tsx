@@ -40,7 +40,6 @@ export const DashboardChart: FC = () => {
     <div className="h-64 rounded-md border border-zinc-800 bg-zinc-950 px-4 py-3">
       <div className="mb-2 flex items-center justify-between text-xs font-mono text-zinc-500">
         <span>Cumulative Impact Index · $JCHE</span>
-        <span>Merit Scholarship → Algebris Intern</span>
       </div>
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart
