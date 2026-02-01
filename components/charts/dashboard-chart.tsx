@@ -18,7 +18,8 @@ import {
 
 const data: ChartPoint[] = buildCareerPerformanceSeries();
 
-const renderTooltip = ({ active, payload }: TooltipProps<number, string>) => {
+const renderTooltip = (props: TooltipProps<number, string>) => {
+  const { active, payload } = props;
   if (!active || !payload || payload.length === 0) return null;
 
   const point = payload[0].payload as ChartPoint;
@@ -38,7 +39,7 @@ export const DashboardChart: FC = () => {
   return (
     <div className="h-64 rounded-md border border-zinc-800 bg-zinc-950 px-4 py-3">
       <div className="mb-2 flex items-center justify-between text-xs font-mono text-zinc-500">
-        <span>Performance: $JCHE</span>
+        <span>Cumulative Impact Index · $JCHE</span>
         <span>Merit Scholarship → Algebris Intern</span>
       </div>
       <ResponsiveContainer width="100%" height="100%">

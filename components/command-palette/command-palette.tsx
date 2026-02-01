@@ -55,7 +55,10 @@ export const CommandPalette: FC = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   useCommandPaletteHotkey({
-    onOpen: () => setOpen(true),
+    onOpen: () => {
+      // Re-open palette preserving last query and selected item
+      setOpen(true);
+    },
   });
 
   const filtered = useMemo(() => {

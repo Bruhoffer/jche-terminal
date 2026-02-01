@@ -13,7 +13,7 @@ export const OverviewView: FC = () => {
       <header className="flex flex-col gap-1">
         <h1 className="text-lg font-semibold tracking-tight">$JCHE Overview</h1>
         <p className="text-sm text-zinc-400">
-          Equity-style performance of the Justin Cheong Exchange, with latest
+          Cumulative Impact Index of the Justin Cheong Exchange, with latest
           disclosures and active positions.
         </p>
       </header>
@@ -24,16 +24,17 @@ export const OverviewView: FC = () => {
         <aside className="flex flex-col justify-between gap-4 rounded-md border border-zinc-800 bg-zinc-950 p-4 text-sm">
           <div className="space-y-1">
             <div className="text-xs font-mono uppercase tracking-wide text-zinc-500">
-              Executive Summary
+              Trade Thesis · Long $JCHE
             </div>
             <div className="text-base font-semibold">
               The Justin Cheong Exchange ($JCHE)
             </div>
             <p className="text-xs text-zinc-400">
-              B.Sc. Business Analytics @ NUS (GPA 4.89/5.00). Currently
-              operating as Software Engineer Intern @ Algebris Investments,
-              building high-performance data tooling for research and portfolio
-              analytics.
+              High-conviction data and engineering profile focused on turning
+              raw financial and operational data into usable signal for research
+              and portfolio decisions. Comfortable across data pipelines, infra
+              and terminal-style UX, with a track record of measurable latency
+              and productivity gains.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-zinc-400">
@@ -52,7 +53,7 @@ export const OverviewView: FC = () => {
           </div>
           <div className="flex items-center justify-between">
             <span className="text-[10px] font-mono uppercase tracking-wide text-zinc-500">
-              Prospectus
+              Execute Trade
             </span>
             <a
               href="/cv.pdf"
@@ -115,6 +116,35 @@ export const OverviewView: FC = () => {
                 </span>
               </div>
             ))}
+          </div>
+        </section>
+
+        <section className="rounded-md border border-zinc-800 bg-zinc-950 p-4">
+          <div className="mb-2 flex items-center justify-between text-xs font-mono text-zinc-500">
+            <span>Risk Management</span>
+            <span className="text-zinc-600">Operational Discipline</span>
+          </div>
+          <div className="grid gap-2 text-[11px] font-mono text-zinc-400 sm:grid-cols-2">
+            <div className="space-y-1">
+              <div className="text-[10px] uppercase text-zinc-500">
+                Version Control
+              </div>
+              <div>Git, GitHub</div>
+            </div>
+            <div className="space-y-1">
+              <div className="text-[10px] uppercase text-zinc-500">
+                Delivery
+              </div>
+              <div>Azure DevOps (boards & pipelines)</div>
+            </div>
+            <div className="space-y-1">
+              <div className="text-[10px] uppercase text-zinc-500">Testing</div>
+              <div>pytest-style unit and integration tests</div>
+            </div>
+            <div className="space-y-1">
+              <div className="text-[10px] uppercase text-zinc-500">Infra</div>
+              <div>Docker for reproducible environments</div>
+            </div>
           </div>
         </section>
       </div>

@@ -15,27 +15,32 @@ export const buildCareerPerformanceSeries = (): ChartPoint[] => {
   return [
     {
       label: "Aug 2021",
-      value: 40,
+      // Early stage: strong foundation, but a lot of headroom left.
+      value: 35,
       note: "Merit Scholarship; started B.Sc. Business Analytics @ NUS",
     },
     {
       label: "Dec 2022",
-      value: 72,
+      // First professional exposure in consulting; step-change in practical impact.
+      value: 55,
       note: "Consulting Intern @ EY – supporting client transformation projects",
     },
     {
       label: "Aug 2023",
-      value: 78,
+      // Deeper technical ownership over analytics tooling.
+      value: 70,
       note: "Technology Intern @ Finexis – analytics dashboards & reporting",
     },
     {
       label: "Apr 2024",
-      value: 86,
+      // End-to-end product work on data-heavy financial dashboards.
+      value: 84,
       note: "Full-Stack Developer Intern @ Monee – financial dashboards & integrations",
     },
     {
       label: "May 2024",
-      value: 94,
+      // High-conviction role focused on research and portfolio analytics infra.
+      value: 95,
       note: "Software Engineer Intern @ Algebris Investments – internal data tooling",
     },
   ];
