@@ -1,12 +1,31 @@
 "use client";
 
+import { marketData } from "@/data/market-data";
 import type { FC } from "react";
 
 export const TickerMarquee: FC = () => {
   return (
-    <div className="w-full border-b border-zinc-800 bg-[#0A0A0A] px-4 py-2 text-xs font-mono text-green-400">
-      {/* TODO: replace with animated ticker driven by marketData */}
-      <span>$JCHE 4.89 ▲ 1.2%</span>
+    <div className="w-full overflow-hidden border-b border-zinc-800 bg-[#0A0A0A]">
+      <div className="flex animate-[marquee_30s_linear_infinite] gap-8 px-4 py-2 text-[11px] font-mono">
+        {[...marketData, ...marketData].map((item, index) => {
+          const isPositive = item.change_percent >= 0;
+          const sign = isPositive ? "▲" : "▼";
+          const colorClass = isPositive ? "text-green-400" : "text-red-400";
+
+          return (
+            <div
+              key={`${item.id}-${index}`}
+              className="flex items-center gap-1 text-zinc-400"
+            >
+              <span className="text-zinc-500">{item.symbol}</span>
+              <span>{item.price.toFixed(2)}</span>
+              <span className={colorClass}>
+                {sign} {item.change_percent.toFixed(2)}%
+              </span>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
