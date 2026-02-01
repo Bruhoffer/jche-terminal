@@ -22,7 +22,7 @@ export const assets: Asset[] = [
   {
     id: "asset-terminal-portfolio",
     ticker: "$JCHE",
-    name: "The Justin Cheong Exchange",
+    name: "Justin Cheong",
     status: "ACTIVE",
     yield: 0.87,
     description:

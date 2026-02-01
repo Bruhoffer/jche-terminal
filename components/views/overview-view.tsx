@@ -14,8 +14,8 @@ export const OverviewView: FC = () => {
       <header className="flex flex-col gap-1">
         <h1 className="text-lg font-semibold tracking-tight">$JCHE Overview</h1>
         <p className="text-sm text-zinc-400">
-          Cumulative Impact Index of the Justin Cheong Exchange, with latest
-          disclosures and active positions.
+          Cumulative Impact Index of Justin Cheong, with latest disclosures and
+          active positions.
         </p>
       </header>
 

@@ -19,7 +19,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
       <CommandPalette />
       {/* Mobile top bar: title + hamburger */}
       <div className="flex items-center justify-between border-b border-zinc-800 bg-[#0A0A0A] px-4 py-2 text-xs font-mono text-zinc-400 md:hidden">
-        <span>The Justin Cheong Exchange</span>
+        <span>Justin Cheong</span>
         <button
           type="button"
           onClick={() => setMobileNavOpen(true)}

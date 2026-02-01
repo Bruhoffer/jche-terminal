@@ -10,38 +10,29 @@ export interface ChartPoint {
 }
 
 // Static series representing career "equity curve" as a time series with notes.
-// You can freely tweak labels / values / notes here to refine the story.
+// Experience-only, starting at 0 and accelerating towards recent roles.
+// Labels are just key months; notes combine all roles active in that month.
 export const buildCareerPerformanceSeries = (): ChartPoint[] => {
   return [
     {
-      label: "Aug 2021",
-      // Early stage: strong foundation, but a lot of headroom left.
-      value: 35,
-      note: "Merit Scholarship; started B.Sc. Business Analytics @ NUS",
+      label: "May '24",
+      value: 0,
+      note: "EY – Technology Consulting Intern",
     },
     {
-      label: "Dec 2022",
-      // First professional exposure in consulting; step-change in practical impact.
-      value: 55,
-      note: "Consulting Intern @ EY – supporting client transformation projects",
+      label: "May '25",
+      value: 17,
+      note: "Finexis – Analytics & Engineering Intern",
     },
     {
-      label: "Aug 2023",
-      // Deeper technical ownership over analytics tooling.
-      value: 70,
-      note: "Technology Intern @ Finexis – analytics dashboards & reporting",
+      label: "Aug '25",
+      value: 39,
+      note: "Monee – Data Engineering Intern | NUS – Teaching Assistant",
     },
     {
-      label: "Apr 2024",
-      // End-to-end product work on data-heavy financial dashboards.
-      value: 84,
-      note: "Full-Stack Developer Intern @ Monee – financial dashboards & integrations",
-    },
-    {
-      label: "May 2024",
-      // High-conviction role focused on research and portfolio analytics infra.
-      value: 95,
-      note: "Software Engineer Intern @ Algebris Investments – internal data tooling",
+      label: "Jan '26",
+      value: 73,
+      note: " Algebris Investments – Software Engineer Intern |                 NUS Student Investment Fund – Analyst",
     },
   ];
 };
