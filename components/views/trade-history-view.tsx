@@ -2,6 +2,7 @@
 
 import { DataTable } from "@/components/data-table/data-table";
 import type { ColumnDef } from "@/components/data-table/types";
+import { MotionSection } from "@/components/layout/motion-section";
 import { trades } from "@/data/trades";
 import type { Trade } from "@/types/domain";
 import { ArrowDownRight, ArrowUpRight, Circle } from "lucide-react";
@@ -60,7 +61,7 @@ const columns: ColumnDef<Trade>[] = [
 
 export const TradeHistoryView: FC = () => {
   return (
-    <section className="flex h-full flex-col gap-4 bg-[#0A0A0A] p-4 text-zinc-100">
+    <MotionSection className="flex h-full flex-col gap-4 bg-[#0A0A0A] p-4 text-zinc-100">
       <header className="flex flex-col gap-1">
         <h1 className="text-lg font-semibold tracking-tight">
           $EXP Trade History
@@ -77,6 +78,6 @@ export const TradeHistoryView: FC = () => {
         getRowKey={(row) => row.id}
         emptyState="No trades recorded yet."
       />
-    </section>
+    </MotionSection>
   );
 };

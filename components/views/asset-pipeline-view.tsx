@@ -1,3 +1,4 @@
+import { MotionSection } from "@/components/layout/motion-section";
 import { assets } from "@/data/assets";
 import { formatPercent } from "@/lib/metrics";
 import type { FC } from "react";
@@ -10,7 +11,7 @@ const statusColorClasses: Record<string, string> = {
 
 export const AssetPipelineView: FC = () => {
   return (
-    <section className="flex h-full flex-col gap-4 bg-[#0A0A0A] p-4 text-zinc-100">
+    <MotionSection className="flex h-full flex-col gap-4 bg-[#0A0A0A] p-4 text-zinc-100">
       <header className="flex flex-col gap-1">
         <h1 className="text-lg font-semibold tracking-tight">
           $PRJ Asset Pipeline
@@ -78,6 +79,6 @@ export const AssetPipelineView: FC = () => {
           );
         })}
       </div>
-    </section>
+    </MotionSection>
   );
 };

@@ -1,4 +1,5 @@
 import { DashboardChart } from "@/components/charts/dashboard-chart";
+import { MotionSection } from "@/components/layout/motion-section";
 import { disclosures } from "@/data/disclosures";
 import { trades } from "@/data/trades";
 import type { FC } from "react";
@@ -8,7 +9,7 @@ const activePositions = trades.filter((trade) => trade.type === "HLD");
 
 export const OverviewView: FC = () => {
   return (
-    <section className="flex h-full flex-col gap-4 bg-[#0A0A0A] p-4 text-zinc-100">
+    <MotionSection className="flex h-full flex-col gap-4 bg-[#0A0A0A] p-4 text-zinc-100">
       <header className="flex flex-col gap-1">
         <h1 className="text-lg font-semibold tracking-tight">$JCHE Overview</h1>
         <p className="text-sm text-zinc-400">
@@ -117,6 +118,6 @@ export const OverviewView: FC = () => {
           </div>
         </section>
       </div>
-    </section>
+    </MotionSection>
   );
 };
