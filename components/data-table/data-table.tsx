@@ -42,11 +42,17 @@ export const DataTable = <TData extends object>({
               key={getRowKey?.(row, rowIndex) ?? rowIndex}
               className="border-t border-zinc-800/60 hover:bg-zinc-900/60"
             >
-              {columns.map((column) => (
-                <td key={String(column.key)} className="px-3 py-1.5 align-top">
-                  {String(row[column.key])}
-                </td>
-              ))}
+              {columns.map((column) => {
+                const value = row[column.key];
+                return (
+                  <td
+                    key={String(column.key)}
+                    className="px-3 py-1.5 align-top"
+                  >
+                    {column.cell ? column.cell(value, row) : String(value)}
+                  </td>
+                );
+              })}
             </tr>
           ))}
         </tbody>
