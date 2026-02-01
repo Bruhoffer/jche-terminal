@@ -1,6 +1,7 @@
 import { disclosures } from "@/data/disclosures";
 import { MotionSection } from "@/components/layout/motion-section";
 import type { FC } from "react";
+import { Link2 } from "lucide-react";
 
 export const DisclosuresView: FC = () => {
   return (
@@ -10,8 +11,7 @@ export const DisclosuresView: FC = () => {
           $EDU Disclosures
         </h1>
         <p className="text-sm text-zinc-400">
-          Regulatory-style summary of academic standing, awards, and high-impact
-          coursework.
+          Disclosure of academic awards, and high-impact coursework.
         </p>
       </header>
 
@@ -20,10 +20,9 @@ export const DisclosuresView: FC = () => {
           <thead className="bg-zinc-950/60 text-[10px] uppercase tracking-wide text-zinc-500">
             <tr>
               <th className="px-3 py-2 text-left">Title</th>
-              <th className="px-3 py-2 text-left">Organization</th>
-              <th className="px-3 py-2 text-left">Date</th>
               <th className="px-3 py-2 text-left">Impact</th>
               <th className="px-3 py-2 text-left">Category</th>
+              <th className="px-3 py-2 text-left">Link</th>
             </tr>
           </thead>
           <tbody>
@@ -35,12 +34,6 @@ export const DisclosuresView: FC = () => {
                 <td className="px-3 py-1.5 align-top text-zinc-100">
                   {d.title}
                 </td>
-                <td className="px-3 py-1.5 align-top text-zinc-400">
-                  {d.organization}
-                </td>
-                <td className="px-3 py-1.5 align-top text-zinc-400">
-                  {d.date}
-                </td>
                 <td className="px-3 py-1.5 align-top text-zinc-300">
                   {String(d.impact_rating)}
                 </td>
@@ -48,6 +41,19 @@ export const DisclosuresView: FC = () => {
                   <span className="inline-flex items-center rounded-full border border-zinc-700 px-2 py-0.5 text-[10px] uppercase tracking-wide text-zinc-400">
                     {d.category}
                   </span>
+                </td>
+                <td className="px-3 py-1.5 align-top text-zinc-400">
+                  {d.link ? (
+                    <a
+                      href={d.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center text-zinc-500 hover:text-zinc-200"
+                    >
+                      <Link2 className="h-3.5 w-3.5" aria-hidden="true" />
+                      <span className="sr-only">Open disclosure link</span>
+                    </a>
+                  ) : null}
                 </td>
               </tr>
             ))}

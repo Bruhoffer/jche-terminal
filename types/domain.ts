@@ -24,6 +24,8 @@ export interface Trade {
   duration: string;
   impact_metric: string;
   description: string;
+  /** Optional structured bullet points for cleaner display */
+  highlights?: string[];
 }
 
 export interface Disclosure {
@@ -34,6 +36,8 @@ export interface Disclosure {
   date: string;
   impact_rating: number | string;
   category: string;
+  /** Optional external resource (e.g. PDF, post, transcript) */
+  link?: string | null;
 }
 
 export interface MarketDatum {

@@ -2,6 +2,7 @@ import { DashboardChart } from "@/components/charts/dashboard-chart";
 import { MotionSection } from "@/components/layout/motion-section";
 import { disclosures } from "@/data/disclosures";
 import { trades } from "@/data/trades";
+import Link from "next/link";
 import type { FC } from "react";
 
 const recentDisclosures = disclosures.slice(0, 3);
@@ -24,31 +25,25 @@ export const OverviewView: FC = () => {
         <aside className="flex flex-col justify-between gap-4 rounded-md border border-zinc-800 bg-zinc-950 p-4 text-sm">
           <div className="space-y-1">
             <div className="text-xs font-mono uppercase tracking-wide text-zinc-500">
-              Trade Thesis · Long $JCHE
+              Trade Thesis · Long
             </div>
-            <div className="text-base font-semibold">
-              The Justin Cheong Exchange ($JCHE)
-            </div>
+            <div className="text-base font-semibold">Justin Cheong ($JCHE)</div>
             <p className="text-xs text-zinc-400">
-              High-conviction data and engineering profile focused on turning
-              raw financial and operational data into usable signal for research
-              and portfolio decisions. Comfortable across data pipelines, infra
-              and terminal-style UX, with a track record of measurable latency
-              and productivity gains.
+              High-conviction data and engineering profile focused on building
+              data infrastructure for financial research.
             </p>
           </div>
-          <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-zinc-400">
-            <div className="flex flex-col">
-              <span className="text-[10px] uppercase text-zinc-500">GPA</span>
-              <span className="text-sm text-green-400">4.89 / 5.00</span>
-            </div>
+          {/* Parent Container */}
+          <div className="flex flex-wrap items-center gap-8 text-xs font-mono">
+            {/* Major Section */}
             <div className="flex flex-col">
               <span className="text-[10px] uppercase text-zinc-500">Major</span>
               <span className="text-sm">Business Analytics</span>
             </div>
+            {/* GPA Section */}
             <div className="flex flex-col">
-              <span className="text-[10px] uppercase text-zinc-500">Node</span>
-              <span className="text-sm">NUS → Algebris</span>
+              <span className="text-[10px] uppercase text-zinc-500">GPA</span>
+              <span className="text-sm text-green-400">4.89 / 5.00</span>
             </div>
           </div>
           <div className="flex items-center justify-between">
@@ -73,9 +68,10 @@ export const OverviewView: FC = () => {
           </div>
           <div className="space-y-2 text-xs">
             {recentDisclosures.map((d) => (
-              <div
+              <Link
                 key={d.id}
-                className="flex items-start justify-between gap-3 border-t border-zinc-800/60 pt-2 first:border-t-0 first:pt-0"
+                href="/disclosures"
+                className="flex items-start justify-between gap-3 border-t border-zinc-800/60 pt-2 text-left first:border-t-0 first:pt-0 hover:bg-zinc-900/60"
               >
                 <div className="flex-1">
                   <div className="font-medium text-zinc-100">{d.title}</div>
@@ -86,7 +82,7 @@ export const OverviewView: FC = () => {
                 <span className="inline-flex items-center rounded-full border border-zinc-700 px-2 py-0.5 text-[10px] uppercase tracking-wide text-zinc-400">
                   {d.category}
                 </span>
-              </div>
+              </Link>
             ))}
           </div>
         </section>
@@ -108,7 +104,13 @@ export const OverviewView: FC = () => {
                   </div>
                   <div className="text-[11px] text-zinc-500">{t.duration}</div>
                   <div className="text-[11px] text-zinc-400">
-                    {t.impact_metric}
+                    <ul className="list-disc space-y-0.5 pl-4">
+                      <li>{t.impact_metric}</li>
+                      {Array.isArray(t.highlights) &&
+                        t.highlights
+                          .slice(0, 2)
+                          .map((item) => <li key={item}>{item}</li>)}
+                    </ul>
                   </div>
                 </div>
                 <span className="mt-1 inline-flex items-center rounded-full border border-green-500/50 px-2 py-0.5 text-[10px] font-mono uppercase tracking-wide text-green-400">
@@ -135,15 +137,18 @@ export const OverviewView: FC = () => {
               <div className="text-[10px] uppercase text-zinc-500">
                 Delivery
               </div>
-              <div>Azure DevOps (boards & pipelines)</div>
+              <div>Azure DevOps CI/CD for data and application services</div>
             </div>
             <div className="space-y-1">
               <div className="text-[10px] uppercase text-zinc-500">Testing</div>
-              <div>pytest-style unit and integration tests</div>
+              <div>pytest-style unit tests and data-validation gates</div>
             </div>
             <div className="space-y-1">
               <div className="text-[10px] uppercase text-zinc-500">Infra</div>
-              <div>Docker for reproducible environments</div>
+              <div>
+                Docker, Databricks, Airflow for reproducible, orchestrated
+                pipelines
+              </div>
             </div>
           </div>
         </section>

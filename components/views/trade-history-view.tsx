@@ -56,6 +56,21 @@ const columns: ColumnDef<Trade>[] = [
   {
     key: "description",
     header: "Description",
+    cell: (value, row) => {
+      const trade = row as Trade;
+      const bullets =
+        trade.highlights && trade.highlights.length > 0
+          ? trade.highlights
+          : [value as string];
+
+      return (
+        <ul className="list-disc space-y-0.5 pl-4 text-[11px] text-zinc-400">
+          {bullets.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      );
+    },
   },
 ];
 

@@ -9,9 +9,15 @@ export const assets: Asset[] = [
     status: "ACTIVE",
     yield: 0.92,
     description:
-      "AI-powered geospatial engine that generates optimized, constraint-aware routes for logistics and personal travel.",
+      "AI-powered routing engine that converts text, prompts and images into road-matched GPS routes using RAG (GPT-4o/Sentence-Transformers), iterative scaling on SVG paths and self-hosted OSRM with custom profiles to handle 100+ concurrent low-latency requests.",
     link: null,
-    tech_stack: ["Next.js", "TypeScript", "Node.js", "Maps API", "PostgreSQL"],
+    tech_stack: [
+      "Python",
+      "FastAPI",
+      "Next.js",
+      "OSRM",
+      "OpenAI",
+    ],
   },
   {
     id: "asset-terminal-portfolio",
